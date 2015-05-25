@@ -2696,7 +2696,7 @@ var $JssorSlider$ = window.$JssorSlider$ = function (elmt, options) {
 
     var _UISearchNoDeep = !_Options.$UISearchMode;
     var _ScaleWrapper;
-    var _SlidesContainer = $Jssor$.$FindChild(elmt, "slides", _UISearchNoDeep);
+    var _SlidesContainer = elmt.querySelector(_Options.slidesContainer);
     var _LoadingContainer = $Jssor$.$FindChild(elmt, "loading", _UISearchNoDeep) || $Jssor$.$CreateDiv(document);
 
     var _BulletNavigatorContainer = $Jssor$.$FindChild(elmt, "navigator", _UISearchNoDeep);
@@ -3573,7 +3573,7 @@ var $JssorThumbnailNavigator$ = window.$JssorThumbnailNavigator$ = function (elm
                 $JssorDebug$.$Fail("height of 'thumbnavigator' container not specified.");
         });
 
-        _SlidesContainer = $Jssor$.$FindChild(elmt, "slides", true);
+        _SlidesContainer = elmt.querySelector(_Options.slidesContainer);
         _ThumbnailPrototype = $Jssor$.$FindChild(_SlidesContainer, "prototype");
 
         $JssorDebug$.$Execute(function () {
